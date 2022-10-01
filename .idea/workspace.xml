@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3d6b07e-7fbd-440c-a56e-e3601e9b94ab" name="Changes" comment="" />
+    <list default="true" id="e3d6b07e-7fbd-440c-a56e-e3601e9b94ab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/concurrent/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/concurrent/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concurrent/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/concurrent/target/classes/Main.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2FSd19tmicBnmW8T5WXfKTtPwCK" />
   <component name="ProjectViewState">
@@ -29,6 +35,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664489207918</updated>
       <workItem from="1664489209579" duration="629000" />
+      <workItem from="1664575301330" duration="52000" />
     </task>
     <servers />
   </component>

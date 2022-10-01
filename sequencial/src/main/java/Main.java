@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         List<TaskService> taskServiceList = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            taskServiceList.add(new TaskService("Thread "+ i));
+            taskServiceList.add(new TaskService("Task "+ i));
         }
         TasksExecutor tasksExecutor = new TasksExecutor(taskServiceList);
         tasksExecutor.getTasksAndCalculatorTime();
