@@ -30,7 +30,7 @@ public class TaskService {
         calculatorTime.setStart();
         this.findAll();
         calculatorTime.setEnd();
-        calculatorTime.setNameThread(this.name);
+        calculatorTime.setThreadName(this.name);
         calculatorTimes.add(calculatorTime);
         return calculatorTimes;
     }

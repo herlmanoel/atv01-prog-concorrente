@@ -1,4 +1,3 @@
-import entities.Task;
 import executors.TasksExecutor;
 import services.TaskService;
 
@@ -8,7 +7,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<TaskService> taskServiceList = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             taskServiceList.add(new TaskService("Task "+ i));
         }
         TasksExecutor tasksExecutor = new TasksExecutor(taskServiceList);

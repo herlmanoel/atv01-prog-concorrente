@@ -24,19 +24,19 @@ public class TaskService extends Thread {
         return request.getData();
     }
 
-
-    public void getTasksAndCalculatorTime() {
-        System.out.println("executando... "+ this.name);
+    public List<CalculatorTime> getTasksAndCalculatorTime() {
+        System.out.println("executando... " + this.name);
         CalculatorTime calculatorTime = new CalculatorTime();
         calculatorTime.setStart();
         this.findAll();
         calculatorTime.setEnd();
-        calculatorTime.setNameThread(this.name);
+        calculatorTime.setThreadName(this.name);
         calculatorTimes.add(calculatorTime);
+        return calculatorTimes;
     }
 
     public List<CalculatorTime> getCalculatorTimes() {
-        return  calculatorTimes;
+        return calculatorTimes;
     }
 
     @Override

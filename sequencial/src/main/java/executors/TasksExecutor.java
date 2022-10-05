@@ -17,7 +17,7 @@ public class TasksExecutor {
     }
 
     public void getTasksAndCalculatorTime() {
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < this.taskServiceList.size(); i++) {
             repeatCalculatorTimes.add(taskServiceList.get(i).getTasksAndCalculatorTime());
         }
         printRepeatCalculatorTimes();
@@ -27,7 +27,7 @@ public class TasksExecutor {
         System.out.println("printRepeatCalculatorTimes");
         repeatCalculatorTimes.forEach(i -> i.forEach(j -> System.out.println(j.toString())));
         if (averageOfRepeatCalculatorTimes().isPresent()) {
-            System.out.println(averageOfRepeatCalculatorTimes().getAsDouble());
+            System.out.println("Avg.: " + averageOfRepeatCalculatorTimes().getAsDouble()  + " ms");
         } else {
             System.out.println("is not present");
         }
@@ -39,12 +39,9 @@ public class TasksExecutor {
                 .mapToDouble(list -> list
                         .stream()
                         .mapToDouble(item -> item
-                                .getTime()
-                                .getSeconds()
-                        )
+                                .getTime())
                         .average()
-                        .getAsDouble()
-                )
+                        .getAsDouble())
                 .average();
     }
 }
