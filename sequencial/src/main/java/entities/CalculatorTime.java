@@ -1,12 +1,16 @@
 package entities;
 
-
 public class CalculatorTime {
     private String threadName;
     private long start;
     private long end;
 
-    public CalculatorTime() {}
+    public CalculatorTime() {
+    }
+
+    public CalculatorTime(String threadName) {
+        this.threadName = threadName;
+    }
 
     public long getStart() {
         return start;
@@ -46,6 +50,6 @@ public class CalculatorTime {
 
     @Override
     public String toString() {
-        return "{threadName: \"" + threadName + "\", time: \""+getTime()+" ms\"}";
+        return "{threadName: \"" + threadName + "\", time: \"" + getTime() + " ms\"}";
     }
 }

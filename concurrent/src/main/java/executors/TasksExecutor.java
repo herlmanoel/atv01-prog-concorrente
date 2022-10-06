@@ -5,10 +5,9 @@ import services.TaskService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.OptionalDouble;
 
 public class TasksExecutor {
-    List<List<CalculatorTime>> repeatCalculatorTimes;
+    List<CalculatorTime> repeatCalculatorTimes;
     private final List<TaskService> taskServiceList;
 
     public TasksExecutor(List<TaskService> taskServiceList) {
@@ -16,31 +15,47 @@ public class TasksExecutor {
         repeatCalculatorTimes = new ArrayList<>();
     }
 
+    private long min = Long.MAX_VALUE;
+    private double avg;
+    private long max;
+
+    CalculatorTime elapsed;
+
     public void getTasksAndCalculatorTime() {
+        elapsed = new CalculatorTime();
+        elapsed.setStart();
         for (int i = 0; i < this.taskServiceList.size(); i++) {
-            repeatCalculatorTimes.add(taskServiceList.get(i).getTasksAndCalculatorTime());
+            taskServiceList.get(i).start();
         }
-        printRepeatCalculatorTimes();
+        for (int i = 0; i < this.taskServiceList.size(); i++) {
+            CalculatorTime time = taskServiceList.get(i).tryJoin();
+            min = Math.min(min, time.getTime());
+            max = Math.max(max, time.getTime());
+            avg += time.getTime();
+        }
+        avg /= (double) this.taskServiceList.size() + 1;
+        elapsed.setEnd();
+
+        System.out.println("Min.: " + min + " ms");
+        System.out.println("Max.: " + max + " ms");
+        System.out.println("Avg.: " + avg + " ms");
+        System.out.println("Total: " + elapsed.getTime() + " ms");
+        System.out.println("------");
     }
 
-    public void printRepeatCalculatorTimes() {
-        repeatCalculatorTimes.forEach(i -> i.forEach(j -> System.out.println(j.toString())));
-        if (averageOfRepeatCalculatorTimes().isPresent()) {
-            System.out.println("Avg.: " + averageOfRepeatCalculatorTimes().getAsDouble() + " ms");
-        } else {
-            System.out.println("is not present");
-        }
+    public long getMin() {
+        return this.min;
     }
 
-    public OptionalDouble averageOfRepeatCalculatorTimes() {
-        return repeatCalculatorTimes
-                .stream()
-                .mapToDouble(list -> list
-                        .stream()
-                        .mapToDouble(item -> item
-                                .getTime())
-                        .average()
-                        .getAsDouble())
-                .average();
+    public double getAvg() {
+        return this.avg;
+    }
+
+    public long getMax() {
+        return this.max;
+    }
+
+    public long getTime() {
+        return this.elapsed.getTime();
     }
 }

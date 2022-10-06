@@ -1,16 +1,10 @@
-import executors.TasksExecutor;
-import services.TaskService;
-
-import java.util.ArrayList;
-import java.util.List;
+import entities.Scenario;
 
 public class Main {
     public static void main(String[] args) {
-        List<TaskService> taskServiceList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            taskServiceList.add(new TaskService("Task "+ i));
-        }
-        TasksExecutor tasksExecutor = new TasksExecutor(taskServiceList);
-        tasksExecutor.getTasksAndCalculatorTime();
+        Scenario scenario = new Scenario(10);
+        System.out.println("Min.: " + scenario.getMin() + " ms");
+        System.out.println("Max.: " + scenario.getMax() + " ms");
+        System.out.println("Avg.: " + scenario.getAvg() + " ms");
     }
 }
