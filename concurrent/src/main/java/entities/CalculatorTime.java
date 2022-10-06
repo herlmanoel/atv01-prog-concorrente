@@ -1,56 +1,55 @@
 package entities;
 
-import java.time.Duration;
-import java.time.LocalTime;
-
 public class CalculatorTime {
-    private String nameThread;
-    private LocalTime start;
-    private LocalTime end;
+    private String threadName;
+    private long start;
+    private long end;
 
-    public CalculatorTime() {}
+    public CalculatorTime() {
+    }
 
-    public LocalTime getStart() {
+    public CalculatorTime(String threadName) {
+        this.threadName = threadName;
+    }
+
+    public long getStart() {
         return start;
     }
 
     public void setStart() {
-        this.start = LocalTime.now();
+        this.start = System.currentTimeMillis();
     }
 
-    public LocalTime getEnd() {
+    public long getEnd() {
         return end;
     }
 
     public void setEnd() {
-        this.end = LocalTime.now();
+        this.end = System.currentTimeMillis();
     }
 
-    public Duration getTime() {
-        return Duration.between(start, end);
+    public long getTime() {
+        return end - start;
     }
 
-    public String getNameThread() {
-        return nameThread;
+    public String getThreadName() {
+        return threadName;
     }
 
-    public void setNameThread(String nameThread) {
-        this.nameThread = nameThread;
+    public void setThreadName(String threadName) {
+        this.threadName = threadName;
     }
 
-    public void setStart(LocalTime start) {
+    public void setStart(long start) {
         this.start = start;
     }
 
-    public void setEnd(LocalTime end) {
+    public void setEnd(long end) {
         this.end = end;
     }
 
     @Override
     public String toString() {
-        return "CalculatorTime {" +
-                "nameThread='" + nameThread + '\'' +
-                "time='" + getTime().getSeconds() + '\'' +
-                '}';
+        return "{threadName: \"" + threadName + "\", time: \"" + getTime() + " ms\"}";
     }
 }

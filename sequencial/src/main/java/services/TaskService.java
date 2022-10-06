@@ -9,12 +9,11 @@ import java.util.List;
 
 public class TaskService {
     private final String url;
-    private List<CalculatorTime> calculatorTimes;
+    private CalculatorTime calculatorTime;
     private String name;
 
     public TaskService(String name) {
         this.name = name;
-        calculatorTimes = new ArrayList<>();
         this.url = "https://jsonplaceholder.typicode.com/todos/";
     }
 
@@ -23,19 +22,19 @@ public class TaskService {
         return request.getData();
     }
 
+    public CalculatorTime getTasksAndCalculatorTime() {
+        System.out.println("executando... " + this.name);
 
-    public List<CalculatorTime> getTasksAndCalculatorTime() {
-        System.out.println("executando... "+ this.name);
-        CalculatorTime calculatorTime = new CalculatorTime();
+        this.calculatorTime = new CalculatorTime(this.name);
         calculatorTime.setStart();
         this.findAll();
         calculatorTime.setEnd();
-        calculatorTime.setNameThread(this.name);
-        calculatorTimes.add(calculatorTime);
-        return calculatorTimes;
+        System.out.println("finalizada " + calculatorTime);
+
+        return calculatorTime;
     }
 
-    public List<CalculatorTime> getCalculatorTimes() {
-        return  calculatorTimes;
+    public CalculatorTime getCalculatorTime() {
+        return calculatorTime;
     }
 }

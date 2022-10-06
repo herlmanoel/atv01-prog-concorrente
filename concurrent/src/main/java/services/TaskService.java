@@ -4,18 +4,16 @@ import entities.CalculatorTime;
 import entities.Task;
 import utils.RequestHttp;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TaskService extends Thread {
     private final String url;
-    private List<CalculatorTime> calculatorTimes;
+    private CalculatorTime calculatorTime;
     private String name;
 
     public TaskService(String name) {
         super(name);
         this.name = name;
-        calculatorTimes = new ArrayList<>();
         this.url = "https://jsonplaceholder.typicode.com/todos/";
     }
 
@@ -24,19 +22,20 @@ public class TaskService extends Thread {
         return request.getData();
     }
 
+    public CalculatorTime getTasksAndCalculatorTime() {
+        System.out.println("executando... " + this.name);
 
-    public void getTasksAndCalculatorTime() {
-        System.out.println("executando... "+ this.name);
-        CalculatorTime calculatorTime = new CalculatorTime();
+        this.calculatorTime = new CalculatorTime(this.name);
         calculatorTime.setStart();
         this.findAll();
         calculatorTime.setEnd();
-        calculatorTime.setNameThread(this.name);
-        calculatorTimes.add(calculatorTime);
+        System.out.println("finalizada " + calculatorTime);
+
+        return calculatorTime;
     }
 
-    public List<CalculatorTime> getCalculatorTimes() {
-        return  calculatorTimes;
+    public CalculatorTime getCalculatorTime() {
+        return calculatorTime;
     }
 
     @Override
@@ -44,14 +43,13 @@ public class TaskService extends Thread {
         getTasksAndCalculatorTime();
     }
 
-    public List<CalculatorTime> tryJoin() {
+    public CalculatorTime tryJoin() {
         try {
             this.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } finally {
-            return this.calculatorTimes;
         }
+        return this.calculatorTime;
     }
 
 }
