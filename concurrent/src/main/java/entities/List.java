@@ -2,31 +2,34 @@ package entities;
 
 import java.util.ArrayList;
 
-public class List{
-    public int dt;
-    public Main main;
-    public ArrayList<Weather> weather;
-    public Clouds clouds;
-    public Wind wind;
-    public int visibility;
-    public double pop;
-    public Rain rain;
-    public Sys sys;
-    public String dt_txt;
+public class List {
+
+    public int id;
+    public String title;
+    public String description;
+    public int price;
+    public double discountPercentage;
+    public double rating;
+    public int stock;
+    public String brand;
+    public String category;
+    public String thumbnail;
+    public ArrayList<String> images;
 
     @Override
     public String toString() {
         return "List{" +
-                "dt=" + dt +
-                ", main=" + main +
-                ", weather=" + weather +
-                ", clouds=" + clouds +
-                ", wind=" + wind +
-                ", visibility=" + visibility +
-                ", pop=" + pop +
-                ", rain=" + rain +
-                ", sys=" + sys +
-                ", dt_txt='" + dt_txt + '\'' +
+                "id=" + id + "," +
+                "title=" + title + "," +
+                "description=" + description + "," +
+                "price=" + price + "," +
+                "discountPercentage=" + discountPercentage + "," +
+                "rating=" + rating + "," +
+                "stock=" + stock + "," +
+                "brand=" + brand + "," +
+                "category=" + category + "," +
+                "thumbnail=" + thumbnail + "," +
+                "images=" + images +
                 '}';
     }
 }

@@ -33,7 +33,7 @@ public class TasksExecutor {
             max = Math.max(max, time.getTime());
             avg += time.getTime();
         }
-        avg /= (double) this.taskServiceList.size() + 1;
+        avg /= (double) this.taskServiceList.size();
         elapsed.setEnd();
 
         System.out.println("Min.: " + min + " ms");

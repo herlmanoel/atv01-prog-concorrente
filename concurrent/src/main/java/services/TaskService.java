@@ -2,10 +2,7 @@ package services;
 
 import entities.CalculatorTime;
 import entities.Root;
-import entities.Task;
 import utils.RequestHttp;
-
-import java.util.List;
 
 public class TaskService extends Thread {
     private final String url;
@@ -15,7 +12,7 @@ public class TaskService extends Thread {
     public TaskService(String name) {
         super(name);
         this.name = name;
-        this.url = "https://api.openweathermap.org/data/2.5/forecast?lat=-5.832138&lon=-35.205358&appid=a3ea32ec773a895cc162c8253f613b2e";
+        this.url = "https://dummyjson.com/products/";
     }
 
     public Root findAll() {
@@ -29,7 +26,7 @@ public class TaskService extends Thread {
         this.calculatorTime = new CalculatorTime(this.name);
         calculatorTime.setStart();
         Root root = this.findAll();
-        System.out.println(root.toString()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                );
+        System.out.println(root.toString());
         calculatorTime.setEnd();
         System.out.println("finalizada " + calculatorTime);
 

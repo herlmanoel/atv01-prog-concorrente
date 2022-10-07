@@ -2,21 +2,19 @@ package entities;
 
 import java.util.ArrayList;
 
-public class Root{
-    public String cod;
-    public int message;
-    public int cnt;
-    public ArrayList<List> list;
-    public City city;
+public class Root {
+    public ArrayList<List> products;
+    public int total;
+    public int skip;
+    public int limit;
 
     @Override
     public String toString() {
         return "Root{" +
-                "cod='" + cod + '\'' +
-                ", message=" + message +
-                ", cnt=" + cnt +
-                ", list=" + list +
-                ", city=" + city +
+                "products='" + products + '\'' +
+                ", total=" + total +
+                ", skip=" + skip +
+                ", limit=" + limit +
                 '}';
     }
 }
