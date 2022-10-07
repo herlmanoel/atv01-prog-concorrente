@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9769f557-9b69-4633-abf9-a45b421459d2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/CalculatorTime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/City.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Clouds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Coord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Rain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Root.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Scenario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Sys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Weather.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Wind.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/RequestHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/RequestHttp.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2FoawtZqnIgqtP80HbrDqMkPBIy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="concurrent" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9769f557-9b69-4633-abf9-a45b421459d2" name="Changes" comment="" />
+      <created>1665161135404</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665161135404</updated>
+      <workItem from="1665161136831" duration="1222000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
