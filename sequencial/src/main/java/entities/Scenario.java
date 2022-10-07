@@ -10,18 +10,16 @@ public class Scenario {
     private long min = Long.MAX_VALUE;
     private double avg = 0;
     private long max = 0;
-    private double dev;
-    private final Integer REPEAT = 20;
-
-    private long[] times;
+    private final double dev;
 
     public Scenario(int amount) {
-        times = new long[REPEAT];
+        int REPEAT = 20;
+        long[] times = new long[REPEAT];
         for (int b = 0; b < REPEAT; b++) {
             System.out.println((b + 1) + "/" + REPEAT);
             List<TaskService> taskServiceList = new ArrayList<>();
             for (int i = 0; i < amount; i++) {
-                taskServiceList.add(new TaskService("Thread " + i));
+                taskServiceList.add(new TaskService("Service " + i));
             }
             TasksExecutor tasksExecutor = new TasksExecutor(taskServiceList);
             tasksExecutor.getTasksAndCalculatorTime();
@@ -32,7 +30,7 @@ public class Scenario {
             max = Math.max(max, tasksExecutor.getTime());
             avg += tasksExecutor.getTime();
         }
-        avg /= (double) REPEAT;
+        avg /= REPEAT;
 
         double variance = 0;
         for (int i = 0; i < REPEAT; i++) {
