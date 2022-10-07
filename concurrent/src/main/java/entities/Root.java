@@ -42,4 +42,13 @@ public class Root {
         this.products = products;
     }
 
+    @Override
+    public String toString() {
+        return "Root{" +
+                "products=" + products +
+                ", total=" + total +
+                ", skip=" + skip +
+                ", limit=" + limit +
+                '}';
+    }
 }
