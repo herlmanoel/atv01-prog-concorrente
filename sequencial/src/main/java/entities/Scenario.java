@@ -10,9 +10,9 @@ public class Scenario {
     private long min = Long.MAX_VALUE;
     private double avg;
     private long max = 0;
-    private final Integer REPEAT = 20;
 
     public Scenario(int amount) {
+        int REPEAT = 20;
         for (int b = 0; b < REPEAT; b++) {
             System.out.println((b + 1) + "/" + REPEAT);
             List<TaskService> taskServiceList = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Scenario {
             max = Math.max(max, tasksExecutor.getTime());
             avg += tasksExecutor.getTime();
         }
-        avg /= (double) amount;
+        avg /= amount;
     }
 
     public long getMin() {
