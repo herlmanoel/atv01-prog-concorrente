@@ -9,6 +9,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RequestHttp {
     private String url;
@@ -25,19 +27,19 @@ public class RequestHttp {
         this.url = url;
     }
 
-    public Root getData () {
+    public List<Root> getData () {
         HttpResponse<String> response = null;
-        Root root = new Root();
+        List<Root> root = new ArrayList<>();
         try {
             response = HttpClient.newHttpClient().send(createUrl(), HttpResponse.BodyHandlers.ofString());
             ObjectMapper mapper = new ObjectMapper();
-            root = mapper.readValue(response.body(), new TypeReference<Root>() {});
+            root = mapper.readValue(response.body(), new TypeReference<List<Root>>() {});
             return root;
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return new Root();
+        return new ArrayList<>();
     }
 }

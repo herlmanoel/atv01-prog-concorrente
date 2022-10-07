@@ -4,6 +4,8 @@ import entities.CalculatorTime;
 import entities.Root;
 import utils.RequestHttp;
 
+import java.util.List;
+
 public class TaskService extends Thread {
     private final String url;
     private CalculatorTime calculatorTime;
@@ -12,10 +14,10 @@ public class TaskService extends Thread {
     public TaskService(String name) {
         super(name);
         this.name = name;
-        this.url = "https://dummyjson.com/products";
+        this.url = "https://escoladesaude.ufrn.br/api/calendario";
     }
 
-    public Root findAll() {
+    public List<Root> findAll() {
         RequestHttp request = new RequestHttp(url);
         return request.getData();
     }
@@ -25,8 +27,8 @@ public class TaskService extends Thread {
 
         this.calculatorTime = new CalculatorTime(this.name);
         calculatorTime.setStart();
-        Root root = this.findAll();
-        System.out.println(root.toString());
+        List<Root> root = this.findAll();
+        root.forEach(i -> System.out.println(i.toString()));
         calculatorTime.setEnd();
         System.out.println("finalizada " + calculatorTime);
 
