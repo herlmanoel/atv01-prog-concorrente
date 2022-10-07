@@ -11,7 +11,7 @@ public class TaskService {
 
     public TaskService(String name) {
         this.name = name;
-        this.url = "https://dummyjson.com/products";
+        this.url = "https://escoladesaude.ufrn.br/api/calendario";
     }
 
     public Root findAll() {
@@ -25,7 +25,7 @@ public class TaskService {
         this.calculatorTime = new CalculatorTime(this.name);
         calculatorTime.setStart();
         Root root = this.findAll();
-        System.out.println(root.toString()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                );
+        System.out.println(root.toString());
         calculatorTime.setEnd();
         System.out.println("finalizada " + calculatorTime);
 
