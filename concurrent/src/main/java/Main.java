@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         int[] amounts = new int[] {
-                10, 100, 500, 1000, 5000
+			2, 10, 50, 250, 1250
         };
         FileWriter writer = new FileWriter("output.csv");
         writer.write("AMOUNT,MIN,MAX,AVG,DEV\n");
