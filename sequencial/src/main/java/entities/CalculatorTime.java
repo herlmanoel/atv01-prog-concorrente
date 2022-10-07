@@ -1,15 +1,15 @@
 package entities;
 
 public class CalculatorTime {
-    private String threadName;
+    private String serviceName;
     private long start;
     private long end;
 
     public CalculatorTime() {
     }
 
-    public CalculatorTime(String threadName) {
-        this.threadName = threadName;
+    public CalculatorTime(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     public long getStart() {
@@ -32,12 +32,12 @@ public class CalculatorTime {
         return end - start;
     }
 
-    public String getThreadName() {
-        return threadName;
+    public String getServiceName() {
+        return serviceName;
     }
 
-    public void setThreadName(String threadName) {
-        this.threadName = threadName;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     public void setStart(long start) {
@@ -50,6 +50,6 @@ public class CalculatorTime {
 
     @Override
     public String toString() {
-        return "{threadName: \"" + threadName + "\", time: \"" + getTime() + " ms\"}";
+        return "{serviceName: \"" + serviceName + "\", time: \"" + getTime() + " ms\"}";
     }
 }

@@ -1,10 +1,10 @@
 package services;
 
 import entities.CalculatorTime;
+import entities.Root;
 import entities.Task;
 import utils.RequestHttp;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TaskService {
@@ -14,10 +14,10 @@ public class TaskService {
 
     public TaskService(String name) {
         this.name = name;
-        this.url = "https://jsonplaceholder.typicode.com/todos/";
+        this.url = "https://api.openweathermap.org/data/2.5/forecast?lat=-5.832138&lon=-35.205358&appid=a3ea32ec773a895cc162c8253f613b2e";
     }
 
-    public List<Task> findAll() {
+    public Root findAll() {
         RequestHttp request = new RequestHttp(url);
         return request.getData();
     }
@@ -27,7 +27,8 @@ public class TaskService {
 
         this.calculatorTime = new CalculatorTime(this.name);
         calculatorTime.setStart();
-        this.findAll();
+        Root root = this.findAll();
+        System.out.println(root.toString()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                );
         calculatorTime.setEnd();
         System.out.println("finalizada " + calculatorTime);
 

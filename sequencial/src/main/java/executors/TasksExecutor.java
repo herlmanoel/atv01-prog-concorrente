@@ -10,26 +10,28 @@ public class TasksExecutor {
     List<CalculatorTime> repeatCalculatorTimes;
     private final List<TaskService> taskServiceList;
 
-    private long min = Long.MAX_VALUE;
-    private double avg;
-    private long max;
-
-    private CalculatorTime elapsed;
-
     public TasksExecutor(List<TaskService> taskServiceList) {
         this.taskServiceList = taskServiceList;
         repeatCalculatorTimes = new ArrayList<>();
     }
 
+    private long min = Long.MAX_VALUE;
+    private double avg;
+    private long max;
+
+    CalculatorTime elapsed;
+
     public void getTasksAndCalculatorTime() {
-        this.elapsed = new CalculatorTime();
+        elapsed = new CalculatorTime();
         elapsed.setStart();
+
         for (int i = 0; i < this.taskServiceList.size(); i++) {
             CalculatorTime time = taskServiceList.get(i).getTasksAndCalculatorTime();
             min = Math.min(min, time.getTime());
             max = Math.max(max, time.getTime());
             avg += time.getTime();
         }
+
         avg /= (double) this.taskServiceList.size() + 1;
         elapsed.setEnd();
 

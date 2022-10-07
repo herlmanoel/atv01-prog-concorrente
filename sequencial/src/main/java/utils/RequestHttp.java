@@ -2,6 +2,7 @@ package utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import entities.Root;
 import entities.Task;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
+import java.util.Optional;
 
 public class RequestHttp {
     private String url;
@@ -26,19 +28,19 @@ public class RequestHttp {
         this.url = url;
     }
 
-    public List<Task> getData () {
+    public Root getData () {
         HttpResponse<String> response = null;
-        List<Task> listOfTask = null;
+        Root root = new Root();
         try {
             response = HttpClient.newHttpClient().send(createUrl(), HttpResponse.BodyHandlers.ofString());
             ObjectMapper mapper = new ObjectMapper();
-            listOfTask = mapper.readValue(response.body(), new TypeReference<List<Task>>() {});
-            return listOfTask;
+            root = mapper.readValue(response.body(), new TypeReference<Root>() {});
+            return root;
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return null;
+        return new Root();
     }
 }
