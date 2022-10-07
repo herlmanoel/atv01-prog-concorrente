@@ -12,7 +12,7 @@ public class TaskService extends Thread {
     public TaskService(String name) {
         super(name);
         this.name = name;
-        this.url = "https://dummyjson.com/products/";
+        this.url = "https://dummyjson.com/products";
     }
 
     public Root findAll() {
