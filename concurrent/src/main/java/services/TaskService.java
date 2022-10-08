@@ -9,7 +9,7 @@ import java.util.List;
 public class TaskService extends Thread {
     private final String url;
     private CalculatorTime calculatorTime;
-    private String name;
+    private final String name;
 
     public TaskService(String name) {
         super(name);
@@ -22,7 +22,7 @@ public class TaskService extends Thread {
         return request.getData();
     }
 
-    public CalculatorTime getTasksAndCalculatorTime() {
+    public void getTasksAndCalculatorTime() {
         System.out.println("executando... " + this.name);
 
         this.calculatorTime = new CalculatorTime(this.name);
@@ -32,11 +32,6 @@ public class TaskService extends Thread {
         calculatorTime.setEnd();
         System.out.println("finalizada " + calculatorTime);
 
-        return calculatorTime;
-    }
-
-    public CalculatorTime getCalculatorTime() {
-        return calculatorTime;
     }
 
     @Override
