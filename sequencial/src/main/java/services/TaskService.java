@@ -27,7 +27,7 @@ public class TaskService {
         this.calculatorTime = new CalculatorTime(this.name);
         calculatorTime.setStart();
         List<Root> root = this.findAll();
-        root.forEach(i -> i.toString());
+        System.out.println(root.toString());
         calculatorTime.setEnd();
         System.out.println("finalizada " + calculatorTime);
 
